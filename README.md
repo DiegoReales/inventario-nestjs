@@ -25,7 +25,7 @@ Asegúrate de tener instalado en tu máquina lo siguiente:
 1. **Clona el repositorio:**
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/DiegoReales/inventario-nestjs.git
    cd tu-repositorio
    ```
 
@@ -50,16 +50,16 @@ Asegúrate de tener instalado en tu máquina lo siguiente:
    Abre el archivo **src/app.module.ts** y modifica la configuración de TypeORM para apuntar a tu base de datos:
 
    ```ts
-  TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'tu_usuario',
-      password: 'tu_contraseña',
-      database: 'acme',
-      entities: [Product],
-      synchronize: true, // Cambiar a false en producción
-  }),
+    TypeOrmModule.forRoot({
+        type: 'postgres',
+        host: 'localhost',
+        port: 5432,
+        username: 'tu_usuario',
+        password: 'tu_contraseña',
+        database: 'acme',
+        entities: [Product],
+        synchronize: true, // Cambiar a false en producción
+    }),
    ```
 
   Asegúrate de cambiar 'tu_usuario' y 'tu_contraseña' a tus credenciales de PostgreSQL.
