@@ -18,8 +18,8 @@ export class ProductsService {
     return this.productsRepository.save(product);
   }
 
-  findAll() {
-    return this.productsRepository.find();
+  findAll(page: number, size: number) {
+    return this.productsRepository.find({ take: size, skip: page * size });
   }
 
   async findOne(id: number) {

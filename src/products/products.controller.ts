@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards, Query } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { ProductCreateDto } from './dtos/product-create.dto';
 import { ProductUpdateDto } from './dtos/product-update.dto';
@@ -20,8 +20,8 @@ export class ProductsController {
   @UseGuards(AuthGuard)
   @Get()
 	@ApiResponse({ status: 200, description: 'Lista de productos.' })
-  findAll() {
-    return this.productsService.findAll();
+  findAll(@Query('page') page: number = 0, @Query('size') size: number = 20) {
+    return this.productsService.findAll(page, size);
   }
 
   @UseGuards(AuthGuard)
