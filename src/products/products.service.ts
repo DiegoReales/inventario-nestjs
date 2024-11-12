@@ -18,8 +18,13 @@ export class ProductsService {
     return this.productsRepository.save(product);
   }
 
-  findAll(page: number, size: number) {
-    return this.productsRepository.find({ take: size, skip: page * size });
+  async findAll(page: number, size: number) {
+    const productPage: Product[] = await this.productsRepository.find({ take: size, skip: page * size });
+    return {
+      page,
+      size,
+      content: productPage,
+    }
   }
 
   async findOne(id: number) {
