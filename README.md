@@ -79,7 +79,7 @@ Asegúrate de tener instalado en tu máquina lo siguiente:
   La documentación de la API está disponible en:
 
   ```bash
-   [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
+   http://localhost:3000/api/docs
   ```
 
   Puedes ver todos los endpoints, ejemplos de solicitudes y respuestas, y más información sobre cómo interactuar con la API.
